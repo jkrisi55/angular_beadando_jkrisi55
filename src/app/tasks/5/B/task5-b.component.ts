@@ -1,7 +1,11 @@
+/*
+ * <<licensetext>>
+ */
+
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Person } from '../A/person';
 import { PersonGeneratorService } from '../A/person-generator.service';
-import { Task5BSnackbarService } from './task5-b-snackbar.service';
+import { Task4BSnackbarService } from './task4-b-snackbar.service';
 
 @Component({
   selector: 'app-task5-b',
@@ -11,13 +15,13 @@ import { Task5BSnackbarService } from './task5-b-snackbar.service';
 })
 export class Task5BComponent {
 
-  constructor(peopleGenerator: PersonGeneratorService, snackBar: Task5BSnackbarService) {
+  constructor(peopleGenerator: PersonGeneratorService, snackBar: Task4BSnackbarService) {
     this.peopleGenerator = peopleGenerator;
     this.snackBar = snackBar;
   }
 
   peopleGenerator : PersonGeneratorService;
-  snackBar : Task5BSnackbarService;
+  snackBar : Task4BSnackbarService;
   people : Person[] = [];
 
   ngOnInit(): void {

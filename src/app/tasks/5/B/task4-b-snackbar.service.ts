@@ -1,3 +1,7 @@
+/*
+ * <<licensetext>>
+ */
+
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -5,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root'
 })
 
-export class Task5BSnackbarService {
+export class Task4BSnackbarService {
 
   constructor(private _snackBar: MatSnackBar) { }
 

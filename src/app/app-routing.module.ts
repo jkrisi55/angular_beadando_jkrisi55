@@ -1,9 +1,13 @@
+/*
+ * <<licensetext>>
+ */
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {NavigatorComponent} from "src/app/navigator/navigator.component";
 import {PageRoutes} from "src/app/_constants/page-routes";
 import {SummaryComponent} from "src/app/summary/summary.component";
-import { Task5BSnackbarService } from 'src/app/tasks/5/B/task5-b-snackbar.service';
+import { Task4BSnackbarService } from 'src/app/tasks/5/B/task4-b-snackbar.service';
 import { Task5Guard } from './task5.guard';
 
 const routes: Routes = [
@@ -39,9 +43,9 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  snackBar : Task5BSnackbarService;
+  snackBar : Task4BSnackbarService;
   
-  constructor(snackBar: Task5BSnackbarService) {
+  constructor(snackBar: Task4BSnackbarService) {
     this.snackBar = snackBar;
   }
  }

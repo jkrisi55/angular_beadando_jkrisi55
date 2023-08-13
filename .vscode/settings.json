@@ -1,0 +1,56 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.sortJSON": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+  },
+  "psi-header.config": {
+    "forceToTop": true,
+    "blankLinesAfter": 1,
+    "license": "CustomUri"
+  },
+  "psi-header.lang-config": [
+    {
+      "language": "html",
+      "begin": "<!--",
+      "end": "  -->",
+      "prefix": "  ~ "
+    },
+    {
+      "language": "scss",
+      "begin": "/*!",
+      "end": " */",
+      "prefix": " * "
+    },
+    {
+      "language": "shellscript",
+      "begin": "#",
+      "end": "#",
+      "prefix": "# ",
+      "ignoreLines": ["#!/bin/bash"]
+    }
+  ],
+  "psi-header.changes-tracking": {
+    "isActive": true,
+    "include": ["typescript", "html", "scss", "svg", "shellscript"],
+    "includeGlob": [],
+    "exclude": ["markdown", "json", "jsonc", "text"],
+    "excludeGlob": ["./**/*/ignoreme.*", "../license.txt"],
+    "autoHeader": "autoSave",
+    "enforceHeader": true,
+    "updateLicenseVariables": true
+  },
+  "psi-header.license-reference": {
+    "uri": "../license.txt",
+    "uriIsLocalFile": true
+  },
+  "psi-header.templates": [
+    {
+      "language": "*",
+      "template": ["<<licensetext>>"]
+    }
+  ]
+}

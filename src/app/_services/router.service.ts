@@ -1,6 +1,9 @@
+/*
+ * <<licensetext>>
+ */
+
 import { Injectable } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {Location} from "@angular/common";
 import {PageRoutes} from "src/app/_constants/page-routes";
 import { SaveLastUrlService } from '../save-last-url.service';
 
@@ -9,7 +12,6 @@ import { SaveLastUrlService } from '../save-last-url.service';
 })
 export class RouterService {
   constructor(private route: ActivatedRoute,
-              private location: Location,
               private lastUrlService: SaveLastUrlService,
               private router: Router) { }
 

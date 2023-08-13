@@ -1,10 +1,14 @@
+/*
+ * <<licensetext>>
+ */
+
 import { Component, OnInit } from '@angular/core';
-import {tasks} from "src/app/configuration/tasks";
-import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {RouterService} from "src/app/_services/router.service";
-import {MatDialog} from "@angular/material/dialog";
-import {PreviewComponent} from "src/app/preview/preview.component";
-import { Task5BSnackbarService } from 'src/app/tasks/5/B/task5-b-snackbar.service';
+import { tasks } from "src/app/configuration/tasks";
+import { ActivatedRoute, Router } from "@angular/router";
+import { RouterService } from "src/app/_services/router.service";
+import { MatDialog } from "@angular/material/dialog";
+import { PreviewComponent } from "src/app/preview/preview.component";
+import { Task4BSnackbarService } from 'src/app/tasks/5/B/task4-b-snackbar.service';
 
 @Component({
   selector: 'app-navigator',
@@ -12,7 +16,7 @@ import { Task5BSnackbarService } from 'src/app/tasks/5/B/task5-b-snackbar.servic
   styleUrls: ['./navigator.component.less']
 })
 export class NavigatorComponent implements OnInit {
-  navigator_snackBar : Task5BSnackbarService;
+  navigator_snackBar : Task4BSnackbarService;
   currentIndex: number = 1;
   selectedTask?: 'A' | 'B';
   tasks = tasks;
@@ -20,7 +24,7 @@ export class NavigatorComponent implements OnInit {
               private route: ActivatedRoute,
               private routerService: RouterService,
               private router: Router,
-              private snackBar: Task5BSnackbarService) {this.navigator_snackBar = snackBar;}
+              private snackBar: Task4BSnackbarService) {this.navigator_snackBar = snackBar;}
 
   ngOnInit(): void {
     this.route.params

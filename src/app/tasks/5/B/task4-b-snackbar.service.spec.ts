@@ -1,13 +1,17 @@
+/*
+ * <<licensetext>>
+ */
+
 import { TestBed } from '@angular/core/testing';
 
-import { Task5BSnackbarService } from './task5-b-snackbar.service';
+import { Task4BSnackbarService } from './task4-b-snackbar.service';
 
 describe('Task5BSnackbarService', () => {
-  let service: Task5BSnackbarService;
+  let service: Task4BSnackbarService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Task5BSnackbarService);
+    service = TestBed.inject(Task4BSnackbarService);
   });
 
   it('should be created', () => {
