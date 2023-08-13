@@ -1,0 +1,75 @@
+<ng-template #level
+             let-description="description"
+             let-level="level"
+             let-threshold="threshold">
+  <div class="display-flex"
+       [class.youAreHere]="threshold <= expectedResult && threshold + maxPoints * thresholdDifference > expectedResult ||
+                          (threshold >= maxPoints && expectedResult > maxPoints)"
+       [ngStyle]="{'filter': threshold <= expectedResult && threshold + maxPoints * thresholdDifference > expectedResult ||
+                          (threshold >= maxPoints && expectedResult > maxPoints) ? '' : 'blur(2px) grayscale(1)' }">
+    <div class="text-center"
+         style="width: 150px; min-width: 150px">
+      <img [src]="'assets/images/summary/' + level + '.png'"
+           style="max-height: 75px"/>
+    </div>
+    <div class="flex-grow-1 m-l-10 m-r-10">
+      {{ description }}
+    </div>
+    <div *ngIf="threshold" style="width: 100px; min-width: 100px">
+      <ng-container *ngIf="threshold < maxPoints">
+        {{ threshold }} - {{ (threshold + maxPoints * thresholdDifference) - 0.01 }} pont
+      </ng-container>
+      <ng-container *ngIf="threshold >= maxPoints">
+        {{ maxPoints }}+ pont
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<mat-card class="m-auto" style="width: 500px;">
+  <mat-card-header class="display-block m-b-30">
+    <h1 class="m-b-0">
+      Várható eredmény: <b>{{ expectedResult }}</b> / {{ maxPoints }} pont
+    </h1>
+    <p class="font-style-italic">
+      A várható eredmény feltételezi, hogy a kipipált feladatok valóban jól megoldásra kerültek.
+    </p>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container *ngTemplateOutlet="level; context: {
+      description: 'Tökéletes, most már beküldheted a megoldást!',
+      level: 6,
+      threshold: maxPoints
+    }"></ng-container>
+
+    <ng-container *ngTemplateOutlet="level; context: {
+      description: 'Egész jó, de innen már semmi a max pont elérése, fordulj vissza és csinálj meg még pár feladatot.',
+      level: 5,
+      threshold: maxPoints * 0.85
+    }"></ng-container>
+
+    <ng-container *ngTemplateOutlet="level; context: {
+      description: 'Már csak egy kevés kéne a sikerhez, fordulj vissza és csinálj meg még pár feladatot.',
+      level: 4,
+      threshold: maxPoints * 0.7
+    }"></ng-container>
+
+    <ng-container *ngTemplateOutlet="level; context: {
+      description: 'Tisztes középszer, fordulj vissza és csinálj meg még pár feladatot.',
+      level: 3,
+      threshold: maxPoints * 0.55
+    }"></ng-container>
+
+    <ng-container *ngTemplateOutlet="level; context: {
+      description: 'Az abszolút minimum, fordulj vissza és csinálj meg még pár feladatot.',
+      level: 2,
+      threshold: maxPoints * 0.4
+    }"></ng-container>
+
+    <ng-container *ngTemplateOutlet="level; context: {
+      description: 'DEV NOTE: Felesleges kitölteni, így senki nem fogja beküldeni.',
+      level: 1,
+      threshold: 0
+    }"></ng-container>
+  </mat-card-content>
+</mat-card>

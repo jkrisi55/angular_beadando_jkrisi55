@@ -1,0 +1,59 @@
+<div class="enough_on_right">
+  <span *ngIf="done.length >= 5" >Kiválasztásra került a minimálisan szükséges számú személy!</span>
+</div>
+<div class="boundary-div">
+    <div class="example-container">
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="example-list1"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" cdkDragBoundary=".boundary-div" *ngFor="let person of todo" cdkDrag>{{person.name + "\n" + person.age + "\n" + person.description}}</div>
+      </div>
+    </div>
+    <div class="example-container">
+      <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[todoList]"
+        class="example-list2"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" cdkDragBoundary=".boundary-div" *ngFor="let person of done" cdkDrag>{{person.name + "\n" + person.age + "\n" + person.description}}</div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<!--
+<body>
+    <table class="table1"
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <tr class="example-box" *ngFor="let person of todo" cdkDrag>
+            <td class="example-box" cdkDrag>{{person.name + "\n" + person.age + "\n" + person.description}}</td>
+        </tr>
+    </table>
+    
+    <table class="table1"
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <tr class="example-box" *ngFor="let person of done" cdkDrag>
+            <td class="example-box" cdkDrag>{{person.name + "\n" + person.age + "\n" + person.description}}</td>
+        </tr>
+    </table>
+</body>
+-->

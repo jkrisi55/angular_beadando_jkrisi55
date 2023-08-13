@@ -1,0 +1,47 @@
+<!--
+<h2>Subjects</h2>
+<table>
+    <tr>
+    <td *ngFor="let subject of subjects">
+        <tooltip-overview-example  (on_image_click) = "update_data_to_child($event)" 
+        [source]=subject.image [tooltip]=subject.grade [recently_clicked_image_source] = "data_to_child"></tooltip-overview-example>
+    </td>
+    </tr>
+    <tr>
+        <td *ngFor="let subject of subjects">
+            <p>{{subject.name | uppercase}}</p>
+        </td>
+    </tr>
+</table>
+-->
+
+<ng-template let-subject="subject" #subjectTemplate>
+    <div (click)="update_data_to_child(subject)" *ngIf="subject"><!--/*ngIf="selected_subject && subject"--><!--Ez az *ngIf törte el az ng-templatet-->
+        <img [class.selected_img] = "subject && selected_subject && selected_subject.image === subject.image" src={{subject.image}} matTooltip={{subject.name}}>
+    </div>
+</ng-template>
+
+<table>
+    <tr *ngFor="let subject of subjects">{{subject.name}}
+        <ng-container [ngTemplateOutlet]="subjectTemplate" [ngTemplateOutletContext]="{subject:subject}"></ng-container>
+    </tr>
+</table>
+
+    <!--
+    <tr>
+        <ng-template ngFor let-subject [ngForOf]="subjects">
+            <td>
+                <tooltip-overview-example  (on_image_click) = "update_data_to_child($event)" 
+                [source]=subject.image [tooltip]=subject.grade [recently_clicked_image_source] = "data_to_child"></tooltip-overview-example>
+            </td>
+        </ng-template>
+    </tr>
+    <tr>
+        <ng-template ngFor let-subject [ngForOf]="subjects">
+            <td>
+                <p>{{subject.name | uppercase}}</p>
+            </td>
+        </ng-template>
+    </tr>
+</table>
+-->

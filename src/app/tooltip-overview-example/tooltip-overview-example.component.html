@@ -1,0 +1,4 @@
+<div (click)="emit_click()" >
+    <img [class.selected_img] = "recently_clicked_image_source === source" src={{source}} matTooltip={{tooltip}}>
+</div>
+<!--Itt úgy lehetne átruházni a logikát .ts-be, ha a [class.selected_img] = "func()" alakú függvényhívás lenne-->

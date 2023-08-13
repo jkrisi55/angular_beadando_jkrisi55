@@ -1,0 +1,14 @@
+Injektálásnál mindig kell a private/public. Mi történik? pl nekem 9 paramétert kért volna a translateService, de injektálásnál ok.
+Hogy tegyem ki globálra az aktuális nyelvet? - Úgy tűnik globálon van. Ez valami static objektum?
+Úgy látom @Output() esetén mindig kell EventEmitter is. Nem lehet nélküle?
+Nem működik a translate, ha <mat-option> kapja meg
+    <mat-option *ngFor="let lang of langs" [value]="lang.value" translate>
+      {{lang.viewValue}}
+    </mat-option>
+
+NG TEMPLATE
+GIT TUTORIAL
+GIT STASH
+GUARD
+
+OPEN SZERZI

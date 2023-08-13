@@ -1,0 +1,26 @@
+<form [formGroup]="softwareForm">
+    <table>
+        <tr>
+            <td>
+                <label for="software-name">Software Name: </label>
+                <input id="software-name" type="text" formControlName="softwareName">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="activation-key">Activation Key: </label>
+                <input id="activation-key" type="text" formControlName="activationKey">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="valid-until">Valid Until: </label>
+                <input id="valid-until" type="date" formControlName="validUntil">
+            </td>
+        </tr>
+    </table>
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!softwareForm.valid" (click)="alert_when_valid()">Submit</button>
+    <p>Form Status: {{ softwareForm.status }}</p>
+
+</form>

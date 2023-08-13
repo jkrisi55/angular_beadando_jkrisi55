@@ -1,0 +1,6 @@
+{
+    "select_language": "Válasszon nyelvet",
+    "CURRENT_LANGUAGE": "Jelenleg {{ selected_lang }} nyelven jelenik meg az oldal.",
+    "english": "Angol",
+    "hungarian": "Magyar"
+}

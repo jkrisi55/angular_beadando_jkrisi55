@@ -1,0 +1,12 @@
+<body [ngStyle]="{'background-color': bgcolor}">
+<h2>Click images to progress!</h2>
+<table>
+    <tr>
+        <td *ngFor="let img_source of img_sources">
+            <app-load-image [source]="img_source" (on_image_click_emitter)="increment()"></app-load-image>
+        </td>
+    </tr>
+</table>
+<progress-bar-determinate-example [progress]="counter*20"></progress-bar-determinate-example>
+<div><p>{{counter + "/5"}}</p></div>
+</body>

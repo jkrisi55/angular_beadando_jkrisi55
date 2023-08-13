@@ -1,0 +1,7 @@
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+    <div *cdkVirtualFor="let person of people" class="example-item">
+        <div class="scroll_child">{{person.name}}</div>
+        <div class="scroll_child">{{person.age}}</div>
+        <button  (click)="snackBar.openSnackBar(person.description)" class="scroll_button">Description</button>
+    </div>
+</cdk-virtual-scroll-viewport>

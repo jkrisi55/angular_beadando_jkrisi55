@@ -1,0 +1,33 @@
+= Choose your own +++<s>adventure</s>+++ beadando
+
+== Feladatok
+
+=== Task 1
+
+==== A - Component
+
+==== B - Template
+
+=== Task 2
+
+==== A - Styling
+
+==== B - Form validation
+
+=== Task 3
+
+==== A - Pipe
+
+==== B - Translate
+
+=== Task 4
+
+==== A - Directive
+
+==== B - Service
+
+=== Task 5
+
+==== A - Drag & Drop
+
+==== B - Virtual scrolling

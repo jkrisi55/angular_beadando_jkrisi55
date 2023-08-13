@@ -1,0 +1,17 @@
+<mat-drawer-container style="height: 100%">
+  <mat-drawer mode="side" opened>
+    <button mat-button
+            class="display-block text-left w-100"
+            (click)="routerService.routeToTask(1)">
+      Feladatsor
+    </button>
+    <button mat-button
+            class="display-block text-left w-100"
+            (click)="routerService.routeToSummary()">
+      Várható értékelés
+    </button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

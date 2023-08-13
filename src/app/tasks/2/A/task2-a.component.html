@@ -1,0 +1,8 @@
+<table>
+    <tr *ngFor="let number1 of [].constructor(10); let i = index">
+        <app-task2-a-td *ngFor="let number2 of [].constructor(10); let j = index" 
+        [dark_style]="(((i+1) % 2 !== 0) && ((j+1) % 2 === 0)) || (((i+1) % 2 === 0) && ((j+1) % 2 !== 0))">
+        </app-task2-a-td>
+    </tr>
+</table>
+<!--*ngFor="let item of [].constructor(10); let i = index"-->

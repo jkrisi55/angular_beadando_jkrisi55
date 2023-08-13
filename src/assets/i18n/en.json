@@ -1,0 +1,6 @@
+{
+    "select_language": "Select language",
+    "CURRENT_LANGUAGE": "The site is currently in {{ selected_lang }}.",
+    "english": "English",
+    "hungarian": "Hungarian"
+}
